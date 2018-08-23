@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mapa = findViewById(R.id.image_mapa);
         buttonPrograma = findViewById(R.id.button_programa);
 
-        //fragments.add(new ItemViewFragment(0,"",new Programa()));
+        fragments.add(new ItemViewFragment(0,"",new Programa()));
 
         univaLogo.setOnClickListener(this);
         daadLogo.setOnClickListener(this);
