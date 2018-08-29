@@ -1,5 +1,6 @@
 package com.example.admin.univa_daad;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
@@ -9,6 +10,7 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -27,8 +29,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     String labelLocation = "UNIVA";
     String ubicacion = "geo:<" + 20.656963+ ">,<" + -103.419968+ ">?q=<" + 20.656963+ ">,<" + -103.419968+ ">(" + labelLocation + ")";
     ArrayList<ItemViewFragment> fragments = new ArrayList<>();
+    FrameLayout contentProg;
 
 
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         daadLogo = findViewById(R.id.image_daad);
         mapa = findViewById(R.id.image_mapa);
         buttonPrograma = findViewById(R.id.button_programa);
+        contentProg = findViewById(R.id.fragment_programa);
 
         fragments.add(new ItemViewFragment(0,"",new Programa()));
 
@@ -66,9 +71,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.button_programa:
                 Toast.makeText(context, "abrir fragment", Toast.LENGTH_SHORT).show();
-                Programa programa = new Programa();
+                /*Programa programa = new Programa();
                 FragmentManager fragmentManager = getSupportFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.fragment_programa,programa).commit();
+                fragmentManager.beginTransaction().replace(R.id.fragment_programa,programa).commit();*/
+                Intent intent = new Intent(this, ProgramaActivity.class);
+                startActivity(intent);
                 break;
         }
     }

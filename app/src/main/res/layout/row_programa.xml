@@ -3,7 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/backgroud_radius">
+    android:background="@drawable/backgroud_radius"
+    android:layout_margin="10dp">
     <LinearLayout
         android:id="@+id/view_content_id"
         android:layout_width="match_parent"
@@ -13,15 +14,16 @@
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
         android:paddingRight="20dp"
-        android:paddingLeft="20dp">
+        android:paddingLeft="15dp">
 
         <LinearLayout
+            android:id="@+id/linearFecha"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="5"
             android:orientation="vertical"
             android:gravity="center_horizontal"
-            android:onClick="agendar">
+            android:onClick="onClickAgendar">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -66,7 +68,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:layout_weight="2"
-            android:layout_marginLeft="5dp">
+            android:layout_marginLeft="10dp">
             <TextView
                 android:id="@+id/name_event_id"
                 android:layout_width="wrap_content"
@@ -77,7 +79,7 @@ Management"
                 android:textStyle="bold"
                 android:textColor="@color/white"
                 android:maxLines="2"
-                android:onClick="agendar"/>
+                android:onClick="onClickAgendar"/>
             <TextView
                 android:id="@+id/descrip_event_id"
                 android:layout_width="wrap_content"
@@ -88,7 +90,7 @@ Management"
                 android:textColor="@color/white"
                 android:maxLines="3"
                 android:layout_gravity="right"
-                android:onClick="describe"/>
+                android:onClick="onClickDescribe"/>
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

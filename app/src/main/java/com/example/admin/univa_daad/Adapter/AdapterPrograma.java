@@ -29,7 +29,7 @@ public class AdapterPrograma extends RecyclerView.Adapter<AdapterPrograma.ViewHo
         try{
             onClick = (OnClick) activity;
         }catch (ClassCastException e){
-            throw new ClassCastException("It not work adapter onclick");
+            //throw new ClassCastException("It not work adapter onclick");
         }
     }
 
@@ -51,13 +51,6 @@ public class AdapterPrograma extends RecyclerView.Adapter<AdapterPrograma.ViewHo
         holder.fecha.setText(item.getFecha());
         holder.eventoNombre.setText(item.getNombre());
         holder.eventoDescribe.setText(item.getDescripcion());
-
-        holder.contend.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onClick.OnCLickPrograma(item,position);
-            }
-        });
     }
 
     @Override
